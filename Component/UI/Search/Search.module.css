@@ -40,6 +40,9 @@
   .search {
     font-size: 1.7rem;
   }
+  .icon {
+    font-size: 4rem;
+  }
 }
 /*small Mobile screen*/
 @media (max-width: 20em) {

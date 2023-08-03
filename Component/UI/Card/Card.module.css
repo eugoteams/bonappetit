@@ -70,23 +70,3 @@
 .cardIcon:hover {
   color: #e8590c;
 }
-
-/* Large mobile screen */
-/* @media (max-width: 27em) {
-  .cardTitle {
-    font-size: 1.7rem;
-  }
-  .cardSubText {
-    font-size: 1.5rem;
-  }
-} */
-
-/*small mobile screen */
-/* @media (max-width: 20em) {
-  .cardTitle {
-    font-size: 2.5rem;
-  }
-  .cardSubText {
-    font-size: 2rem;
-  }
-} */
