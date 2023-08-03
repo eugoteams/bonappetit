@@ -19,7 +19,7 @@
 @media (max-width: 27em) {
   .container {
     grid-template-columns: repeat(2, 1fr);
-    width: max-content;
+    width: min-content;
   }
 }
 
