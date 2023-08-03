@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title> should not be used in _document.js's </title>
+        <title>Recipe's around the world</title>
         <meta
           name="description"
           content="which gets all the meals available for free"

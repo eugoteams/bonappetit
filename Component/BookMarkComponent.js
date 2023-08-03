@@ -1,10 +1,8 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-
 import MealsView from "./MealsView/MealsView";
 import useStorage, { MEALS_KEY, BOOKMARK_KEY } from "@/hooks/use-Storage";
-import UnkownUI from "./UnkownUI/UnkownUI";
 import DividerInfo from "./UI/DividerInfo/DividerInfo";
 import Search from "./UI/Search/Search";
 import useHelper from "@/hooks/use-Helper";

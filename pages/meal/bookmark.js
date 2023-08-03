@@ -1,15 +1,14 @@
 /** @format */
 
 import BookmarkComponent from "@/Component/BookMarkComponent";
-import Card from "@/Component/UI/Card/Card";
-import DividerInfo from "@/Component/UI/DividerInfo/DividerInfo";
-import Grid from "@/Component/UI/Grid/Grid";
-import useStorage, { BOOKMARK_KEY, MEALS_KEY } from "@/hooks/use-Storage";
-import React, { useEffect, useState } from "react";
-
+import React from "react";
+import Head from "next/head";
 const Bookmark = (props) => {
   return (
     <React.Fragment>
+      <Head>
+        <title>Bookmarked Recipie's</title>
+      </Head>
       <BookmarkComponent />
     </React.Fragment>
   );

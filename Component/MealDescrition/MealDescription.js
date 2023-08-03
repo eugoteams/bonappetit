@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import Head from "next/head";
 import classes from "./MealDescription.module.css";
 import { useRouter } from "next/router";
 import { BiSolidDish } from "react-icons/bi";
@@ -39,11 +40,14 @@ const MealDescription = (props) => {
   });
 
   const onClickBack = () => {
-    router.push("/");
+    router.back();
   };
 
   return (
     <React.Fragment>
+      <Head>
+        <title>{`Recipe - ${mealTitle}`}</title>
+      </Head>
       <article>
         <div className={`${classes.backButton}`} onClick={onClickBack}>
           <MdArrowBackIosNew />
