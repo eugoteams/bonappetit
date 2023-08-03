@@ -5,6 +5,7 @@ import useApi from "@/hooks/use-Api";
 import React from "react";
 
 const MealId = (props) => {
+  console.log(props);
   return (
     <React.Fragment>
       <MealDescription {...props["meals"][0]} />
@@ -14,11 +15,19 @@ const MealId = (props) => {
 
 export default MealId;
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticProps(context) {
   const { params } = context;
   const { callApi } = useApi();
   let mealId = params.id;
   let payload = { key: "searchById", value: mealId };
+
   let response = await callApi("http://localhost:3000/api/mealdb/v1/all", {
     method: "POST",
     body: JSON.stringify(payload),
@@ -26,6 +35,7 @@ export async function getServerSideProps(context) {
       "Content-Type": "application/json",
     },
   });
+  console.log("getStaticProps", response);
 
   return {
     props: { ...response },
