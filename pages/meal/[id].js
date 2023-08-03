@@ -2,42 +2,40 @@
 
 import MealDescription from "@/Component/MealDescrition/MealDescription";
 import useApi from "@/hooks/use-Api";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 const MealId = (props) => {
-  console.log(props);
+  const [mealDescription, setMealDescription] = useState([]);
+  const { callApi } = useApi();
+  const router = useRouter();
+  const mealID = router.query.id;
+  let payload = { key: "searchById", value: mealID };
+  console.log(router.query.id);
+
+  //Fetch Data from api
+  const dataFromApi = async () => {
+    let data = await callApi("/api/mealdb/v1/all", {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    setMealDescription((prevState) => data.meals);
+  };
+
+  useEffect(() => {
+    dataFromApi();
+  }, []);
+
   return (
     <React.Fragment>
-      <MealDescription {...props["meals"][0]} />
+      {mealDescription.length > 0 && (
+        <MealDescription {...mealDescription[0]} />
+      )}
     </React.Fragment>
   );
 };
 
 export default MealId;
-
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: "blocking",
-  };
-}
-
-export async function getStaticProps(context) {
-  const { params } = context;
-  const { callApi } = useApi();
-  let mealId = params.id;
-  let payload = { key: "searchById", value: mealId };
-
-  let response = await callApi("http://localhost:3000/api/mealdb/v1/all", {
-    method: "POST",
-    body: JSON.stringify(payload),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  console.log("getStaticProps", response);
-
-  return {
-    props: { ...response },
-  };
-}
