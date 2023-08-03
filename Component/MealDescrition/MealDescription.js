@@ -40,7 +40,7 @@ const MealDescription = (props) => {
   });
 
   const onClickBack = () => {
-    router.back();
+    router.push("/");
   };
 
   return (
