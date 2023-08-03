@@ -18,7 +18,8 @@
 /* mobile screen large */
 @media (max-width: 27em) {
   .container {
-    grid-template-columns: repeat(2, 40rem);
+    grid-template-columns: repeat(2, 1fr);
+    width: max-content;
   }
 }
 
