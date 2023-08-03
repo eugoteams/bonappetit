@@ -20,7 +20,7 @@ const MainPageComponent = (props) => {
 
   //Fetch Data from api
   const dataFromApi = async () => {
-    let data = await callApi("http://localhost:3000/api/mealdb/v1/meals", {
+    let data = await callApi("/api/mealdb/v1/meals", {
       method: "GET",
     });
     saveToStorage([...data.meals], MEALS_KEY);
