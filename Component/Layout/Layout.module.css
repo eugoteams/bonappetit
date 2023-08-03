@@ -1,14 +1,14 @@
 /** @format */
 
 .container {
-  width: 95%;
+  max-width: 95%;
   height: 100vh;
   margin: 6rem auto;
   background-color: gray;
 }
 
-@media (max-width: 27em) {
+/* @media (max-width: 27em) {
   .container {
     width: 100%;
   }
-}
+} */
