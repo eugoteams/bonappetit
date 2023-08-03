@@ -2,10 +2,10 @@
 .container {
   font-family: "Poppins", sans-serif;
   position: relative;
-  width: 20rem;
+  width: 100%;
   height: auto;
   margin: 0 auto;
-
+  background-color: green;
   /* background-color: rebeccapurple; */
 }
 .Link,

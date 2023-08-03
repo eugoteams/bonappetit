@@ -1,13 +1,16 @@
 /** @format */
 
 .container {
+  background-color: red;
   display: grid;
   grid-template-columns: repeat(4, 20rem);
   column-gap: 2rem;
   row-gap: 3rem;
   align-items: center;
+  justify-items: center;
   width: 90%;
   margin: 2rem auto;
+  padding: 1rem;
 }
 
 /* mobile screen large */

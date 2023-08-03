@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title> should not be used in _document.js's </title>
       </Head>
-      {/* <Navbar /> */}
+      <Navbar />
       <Layout>
         <Component {...pageProps} />
       </Layout>
