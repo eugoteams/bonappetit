@@ -10,6 +10,11 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title> should not be used in _document.js's </title>
+        <meta
+          name="description"
+          content="which gets all the meals available for free"
+        />
+        <meta name="authot" content="Foody Pvt. Ltd." />
       </Head>
       <Navbar />
       <Layout>

@@ -19,16 +19,3 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/*mobile screen small */
-/* @media (max-width: 20em) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-} */
-/*Iphone mobile screen small */
-/* @media (max-width: 24em) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-} */

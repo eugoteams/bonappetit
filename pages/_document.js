@@ -6,11 +6,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta
-          name="description"
-          content="which gets all the meals available for free"
-        />
-        <meta name="authot" content="Foody Pvt. Ltd." />
         {/* Google Fonts Roboto */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
