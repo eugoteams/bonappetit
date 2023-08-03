@@ -4,7 +4,6 @@ export const MEALS_KEY = "MEALS_DB";
 //Hook should always used inside a useEffect after the dom gets initialized.
 const useStorage = () => {
   const saveToStorage = (data, key) => {
-    console.log(key);
     localStorage.setItem(key, JSON.stringify(data));
   };
 
