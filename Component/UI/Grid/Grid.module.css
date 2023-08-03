@@ -11,15 +11,15 @@
 }
 
 /* mobile screen large */
-@media (max-width: 27em) {
+/* @media (max-width: 27em) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
 /*mobile screen small */
-@media (max-width: 20em) {
+/* @media (max-width: 20em) {
   .container {
     grid-template-columns: repeat(1, 1fr);
   }
-}
+} */
