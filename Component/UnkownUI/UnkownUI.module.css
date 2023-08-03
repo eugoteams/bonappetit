@@ -1,0 +1,20 @@
+/** @format */
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.sortItem {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+
+@media (max-width: 27em) {
+  .container {
+    row-gap: 2rem;
+  }
+}

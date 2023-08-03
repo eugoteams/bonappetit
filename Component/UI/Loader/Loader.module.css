@@ -1,0 +1,50 @@
+/** @format */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.bar {
+  width: 25rem;
+  height: 1rem;
+  background-color: #adb5bd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.active_bar {
+  width: 0%;
+  height: 100%;
+  background-color: #5c7cfa;
+
+  animation-name: load_anim;
+  animation-duration: 56s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes load_anim {
+  0% {
+    width: 10%;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 100%;
+  }
+}

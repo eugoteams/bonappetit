@@ -1,0 +1,52 @@
+/** @format */
+
+.inputField {
+  width: 35rem;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.search {
+  padding: 1rem;
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.icon {
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.inputField:focus-within {
+  border-bottom: 0.3rem solid #748ffc;
+  transition: all 0.5s ease-in;
+}
+
+/*Large Mobile screen*/
+@media (max-width: 27em) {
+  .inputField {
+    padding: 1rem;
+    font-size: 1.7rem;
+  }
+  .search {
+    font-size: 1.7rem;
+  }
+}
+/*small Mobile screen*/
+@media (max-width: 20em) {
+  .inputField {
+    padding: 1.5rem;
+  }
+  .search {
+    font-size: 1.9rem;
+  }
+}

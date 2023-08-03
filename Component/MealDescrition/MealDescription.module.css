@@ -1,0 +1,153 @@
+/** @format */
+/* Avatar */
+
+.backButton {
+  margin-top: 3rem;
+  cursor: pointer;
+  width: 5rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  color: #343a40;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.backButton:hover span {
+  border-bottom: 2px solid #fa5252;
+  transition: all 0.3s ease-in;
+}
+
+.backButton:hover {
+  color: #fa5252;
+  width: 6rem;
+  transition: width 0.2s ease-in;
+}
+
+.container {
+  background-color: #fffdf9;
+  border-color: #f2ede6;
+  width: 65rem;
+  margin: 5rem auto;
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+}
+
+.image_placeholder {
+  height: 40rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  text-transform: capitalize;
+  font-size: 3rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  margin-top: 1.2rem;
+}
+
+/* Tags Styling */
+.tagsContainer {
+  margin-top: 0.5rem;
+  text-transform: capitalize;
+}
+
+.tagContainer {
+  font-size: 1.4rem;
+  margin-right: 2rem;
+  position: relative;
+}
+
+.tagContainer::after {
+  content: "/";
+  display: inline;
+  position: absolute;
+  top: 0;
+  right: auto;
+  padding-left: 1rem;
+  justify-content: center;
+  color: #adb5bd;
+}
+
+.tag_title {
+  font-weight: 300;
+  color: #495057;
+}
+.tag_value {
+  font-weight: 500;
+}
+
+.tag_spl {
+  font-size: 1.6rem;
+}
+
+.tagContainer:last-child::before {
+  content: "";
+  display: none;
+}
+
+/** Meals Info */
+.grid {
+  border: 1px solid #adb5bd;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.gridItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-right: 1px solid #adb5bd;
+  padding: 1rem;
+}
+
+.gridItem:last-child {
+  border: none;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #868e96;
+}
+.gridItem h2 {
+  margin-top: 0.7rem;
+  margin-bottom: 0.2rem;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.gridItem span {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+/*Ingredient*/
+.ingredientContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #fbf9e7;
+}
+
+.secondary_title {
+  text-transform: capitalize;
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.section_standard {
+  margin-top: 3rem;
+}

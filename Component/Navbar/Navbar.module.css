@@ -1,0 +1,60 @@
+/** @format */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: start;
+  padding: 1.5rem;
+}
+
+.logo {
+  font-size: 2.4rem;
+  font-family: "Leckerli One", cursive;
+  color: #fa5252;
+  cursor: pointer;
+}
+
+.nav_container {
+  grid-column: 2/3;
+  margin: 0 auto;
+  justify-items: end;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  column-gap: 3rem;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+}
+
+.link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #495057;
+}
+
+.link:hover {
+  color: #fa5252;
+}
+
+.link_active {
+  color: #fa5252;
+}
+/* Tablet Screen */
+@media (max-width: 48em) {
+  .container {
+    width: 95rem;
+  }
+}
+/* Large mobile screen*/
+@media (max-width: 27em) {
+  .logo {
+    font-size: 3.4rem;
+  }
+
+  .nav_container {
+    font-size: 2.4rem;
+  }
+}

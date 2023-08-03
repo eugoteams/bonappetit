@@ -1,0 +1,29 @@
+/** @format */
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.container input[type="radio"] {
+  padding: 2rem;
+}
+
+.container p {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 300;
+  padding: 1rem;
+}
+
+.text_strike {
+  text-decoration: line-through;
+}
+
+.container_underline {
+  border-bottom: 1px solid rebeccapurple;
+}

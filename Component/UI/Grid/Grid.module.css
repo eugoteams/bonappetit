@@ -1,0 +1,25 @@
+/** @format */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 20rem);
+  column-gap: 2rem;
+  row-gap: 3rem;
+  align-items: center;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* mobile screen large */
+@media (max-width: 27em) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*mobile screen small */
+@media (max-width: 20em) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

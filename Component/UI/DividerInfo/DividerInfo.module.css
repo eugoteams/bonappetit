@@ -1,0 +1,42 @@
+/** @format */
+.container {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  color: #ff6b6b;
+}
+
+.dividerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.divider {
+  background-color: #adb5bd;
+  width: 100%;
+  height: 0.2rem;
+}
+
+.text {
+  text-transform: capitalize;
+}
+
+/* Large screen mobile */
+@media (max-width: 27em) {
+  .container {
+    font-size: 1.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Small screen mobile */
+@media (max-width: 20em) {
+  .container {
+    font-size: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
