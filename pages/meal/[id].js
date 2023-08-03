@@ -11,7 +11,6 @@ const MealId = (props) => {
   const router = useRouter();
   const mealID = router.query.id;
   let payload = { key: "searchById", value: mealID };
-  console.log(router.query.id);
 
   //Fetch Data from api
   const dataFromApi = async () => {
