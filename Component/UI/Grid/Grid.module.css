@@ -10,6 +10,7 @@
   justify-items: center;
   margin: 2rem auto;
   padding: 1rem;
+  overflow: hidden;
 }
 
 /* mobile screen large */
