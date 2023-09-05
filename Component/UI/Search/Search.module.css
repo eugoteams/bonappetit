@@ -34,22 +34,24 @@
 /*Large Mobile screen*/
 @media (max-width: 27em) {
   .inputField {
-    padding: 1rem;
-    font-size: 1.7rem;
+    background-color: rebeccapurple;
+    width: 90%;
+    padding: 0.7rem;
+    font-size: 1.4rem;
   }
   .search {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
   .icon {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
 }
 /*small Mobile screen*/
-@media (max-width: 20em) {
+/* @media (max-width: 20em) {
   .inputField {
     padding: 1.5rem;
   }
   .search {
     font-size: 1.9rem;
   }
-}
+} */
