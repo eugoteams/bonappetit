@@ -2,6 +2,16 @@
 
 .container {
   width: 95rem;
-  height: 100vh;
+  min-height: 100vh;
   margin: 6rem auto;
+  background-color: rebeccapurple;
+}
+
+/*Layout breaks 58em */
+@media (max-width: 58em) {
+  .container {
+    width: 100vw;
+    background-color: aqua;
+    border: 3px solid red;
+  }
 }

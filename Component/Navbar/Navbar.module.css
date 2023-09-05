@@ -1,10 +1,12 @@
 /** @format */
 .container {
+  width: 100vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: start;
   padding: 1.5rem;
+  background-color: gray;
 }
 
 .logo {
@@ -45,16 +47,17 @@
 /* Tablet Screen */
 @media (max-width: 48em) {
   .container {
-    width: 95rem;
+    /* width: 95rem; */
   }
 }
 /* Large mobile screen*/
 @media (max-width: 27em) {
   .logo {
-    font-size: 3.4rem;
+    font-size: 2rem;
   }
 
   .nav_container {
-    font-size: 2.4rem;
+    grid-column: 3/-1;
+    font-size: 1.5rem;
   }
 }

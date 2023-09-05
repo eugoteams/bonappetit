@@ -55,7 +55,7 @@ const MainPageComponent = (props) => {
 
   return (
     <React.Fragment>
-      <UnkownUI
+      {/* <UnkownUI
         storageKey={MEALS_KEY}
         uiListener={(uiData) => {
           if (uiData.length === 0 && meals.length > 0) {
@@ -72,7 +72,7 @@ const MainPageComponent = (props) => {
               : filterValue.join("_").split("_").join(" / ")
           );
         }}
-      />
+      /> */}
       <DividerInfo title={filterText} quantity={meals.length} />
 
       {meals.length === 0 ? (

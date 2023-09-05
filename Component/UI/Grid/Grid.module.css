@@ -9,13 +9,30 @@
   justify-items: center;
   margin: 2rem auto;
   padding: 1rem;
-  min-width: 92%;
+  width: 100%;
   height: auto;
+  background-color: green;
 }
 
-/* mobile screen large */
+/*UI breaks 58em */
+@media (max-width: 58em) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+  }
+}
+/*Grid breaks in between  Tablet to Mobile Large Screen */
+@media (max-width: 58em) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0.5rem;
+    width: 95%;
+  }
+}
+/*Grid at  Mobile Large Screen */
 @media (max-width: 27em) {
   .container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    width: 98%;
   }
 }
