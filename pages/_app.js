@@ -17,9 +17,8 @@ export default function App({ Component, pageProps }) {
         <meta name="authot" content="Foody Pvt. Ltd." />
       </Head>
       <Navbar />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+
+      <Component {...pageProps} />
     </>
   );
 }
