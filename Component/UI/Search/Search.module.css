@@ -34,7 +34,6 @@
 /*Large Mobile screen*/
 @media (max-width: 27em) {
   .inputField {
-    background-color: rebeccapurple;
     width: 90%;
     padding: 0.7rem;
     font-size: 1.4rem;

@@ -42,13 +42,10 @@
   .container {
     width: 100%;
     padding: 0.7rem;
+    font-size: 1.4rem;
   }
 
   .input {
-    font-size: 1.9rem;
     padding: 0.7rem;
-  }
-  .dropDownItem {
-    font-size: 1.95rem;
   }
 }
