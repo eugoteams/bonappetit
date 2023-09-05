@@ -8,7 +8,6 @@ import useApi from "@/hooks/use-Api";
 import UnkownUI from "./UnkownUI/UnkownUI";
 import DividerInfo from "./UI/DividerInfo/DividerInfo";
 import Info from "./UI/Info/Info";
-import Layout from "./Layout/Layout";
 
 const MainPageComponent = (props) => {
   const [serverStatus, setServerStatus] = useState("");
@@ -56,33 +55,31 @@ const MainPageComponent = (props) => {
 
   return (
     <React.Fragment>
-      <Layout>
-        <UnkownUI
-          storageKey={MEALS_KEY}
-          uiListener={(uiData) => {
-            if (uiData.length === 0 && meals.length > 0) {
-              setInfo((prevState) => {
-                return { msg: "Recipe not found !", stopwatch: false };
-              });
-            }
-            setMealsList((prevState) => uiData);
-          }}
-          uiFilterText={(filterValue) => {
-            setFilterText((prevState) =>
-              filterValue === "all"
-                ? "all"
-                : filterValue.join("_").split("_").join(" / ")
-            );
-          }}
-        />
-        <DividerInfo title={filterText} quantity={meals.length} />
+      <UnkownUI
+        storageKey={MEALS_KEY}
+        uiListener={(uiData) => {
+          if (uiData.length === 0 && meals.length > 0) {
+            setInfo((prevState) => {
+              return { msg: "Recipe not found !", stopwatch: false };
+            });
+          }
+          setMealsList((prevState) => uiData);
+        }}
+        uiFilterText={(filterValue) => {
+          setFilterText((prevState) =>
+            filterValue === "all"
+              ? "all"
+              : filterValue.join("_").split("_").join(" / ")
+          );
+        }}
+      />
+      <DividerInfo title={filterText} quantity={meals.length} />
 
-        {meals.length === 0 ? (
-          <Info text={info.msg} stopwatch={info.stopwatch} />
-        ) : (
-          <MealsView arrayOfMeals={meals} title={"all"} />
-        )}
-      </Layout>
+      {meals.length === 0 ? (
+        <Info text={info.msg} stopwatch={info.stopwatch} />
+      ) : (
+        <MealsView arrayOfMeals={meals} title={"all"} />
+      )}
     </React.Fragment>
   );
 };
