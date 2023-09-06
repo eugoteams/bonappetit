@@ -23,6 +23,6 @@
 /*Mobile Small*/
 @media (max-width: 20em) {
   .sortItem {
-    row-gap: 1rem;
+    column-gap: 1rem;
   }
 }
