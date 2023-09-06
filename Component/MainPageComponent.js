@@ -75,11 +75,11 @@ const MainPageComponent = (props) => {
       />
       <DividerInfo title={filterText} quantity={meals.length} />
 
-      {meals.length === 0 ? (
+      {/* {meals.length === 0 ? (
         <Info text={info.msg} stopwatch={info.stopwatch} />
       ) : (
         <MealsView arrayOfMeals={meals} title={"all"} />
-      )}
+      )} */}
     </React.Fragment>
   );
 };

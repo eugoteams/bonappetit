@@ -13,8 +13,16 @@
   column-gap: 2rem;
 }
 
+/*Mobile Large*/
 @media (max-width: 27em) {
   .container {
-    row-gap: 2rem;
+    row-gap: 0.3rem;
+  }
+}
+
+/*Mobile Small*/
+@media (max-width: 20em) {
+  .sortItem {
+    row-gap: 1rem;
   }
 }

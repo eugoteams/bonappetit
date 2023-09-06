@@ -22,8 +22,9 @@
 
 .icon {
   font-size: 2rem;
-  padding: 1rem;
+  /* padding: 1rem; */
   cursor: pointer;
+  color: rebeccapurple;
 }
 
 .inputField:focus-within {
@@ -34,7 +35,6 @@
 /*Large Mobile screen*/
 @media (max-width: 27em) {
   .inputField {
-    width: 90%;
     padding: 0.7rem;
     font-size: 1.4rem;
   }
@@ -42,15 +42,13 @@
     font-size: 1.4rem;
   }
   .icon {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
-/*small Mobile screen*/
-/* @media (max-width: 20em) {
+
+/*Mobile Medium*/
+@media (max-width: 24em) {
   .inputField {
-    padding: 1.5rem;
+    width: 90%;
   }
-  .search {
-    font-size: 1.9rem;
-  }
-} */
+}
