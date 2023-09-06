@@ -1,40 +1,27 @@
 /** @format */
 
 import MealDescription from "@/Component/MealDescrition/MealDescription";
-import useApi from "@/hooks/use-Api";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const MealId = (props) => {
-  const [mealDescription, setMealDescription] = useState([]);
-  const { callApi } = useApi();
-  const router = useRouter();
-  const mealID = router.query.id;
-  let payload = { key: "searchById", value: mealID };
-
-  //Fetch Data from api
-  const dataFromApi = async () => {
-    let data = await callApi("/api/mealdb/v1/all", {
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    setMealDescription((prevState) => data.meals);
-  };
-
-  useEffect(() => {
-    dataFromApi();
-  }, []);
-
+const MealId = ({ meal }) => {
   return (
     <React.Fragment>
-      {mealDescription.length > 0 && (
-        <MealDescription {...mealDescription[0]} />
-      )}
+      <MealDescription meal={meal} />
     </React.Fragment>
   );
 };
+
+export async function getServerSideProps(context) {
+  let id = context.params.id;
+  const path = require("path");
+  const fs = require("fs");
+  const dbPath = path.join(process.cwd(), "/pages/api/mealdb/v1/mealsdb.json");
+  let meals = JSON.parse(fs.readFileSync(dbPath));
+  let meal = meals.find((meal, _) => meal["idMeal"] === id);
+
+  return {
+    props: { meal },
+  };
+}
 
 export default MealId;

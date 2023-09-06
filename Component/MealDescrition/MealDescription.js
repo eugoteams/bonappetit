@@ -14,27 +14,35 @@ import VideoComponent from "../UI/VideoComponent/VideoComponent";
 import BlogHeader from "../UI/BlogHeader/BlogHeader";
 import { MdArrowBackIosNew } from "react-icons/md";
 
-const MealDescription = (props) => {
+const MealDescription = ({ meal }) => {
+  const {
+    strArea,
+    strCategory,
+    strInstructions,
+    strMeal,
+    strMealThumb,
+    strYoutube,
+  } = meal;
   const router = useRouter();
   const INGREDIENT = "strIngredient";
   const MEASURE = "strMeasure";
   const SEPEARATOR = "\r\n";
   let step = 0;
-  let area = props.strArea;
-  let category = props.strCategory;
-  let cookingInstruction = props.strInstructions.split(SEPEARATOR);
-  let mealTitle = props.strMeal;
-  let imageSrc = props.strMealThumb;
-  let videoSrc = props.strYoutube;
+  let area = strArea;
+  let category = strCategory;
+  let cookingInstruction = strInstructions.split(SEPEARATOR);
+  let mealTitle = strMeal;
+  let imageSrc = strMealThumb;
+  let videoSrc = strYoutube;
   const filteredIngredient = [];
   const array20 = [...Array(20)].map((_, index) => {
     let num = index + 1;
     if (
-      props[`${INGREDIENT}${num}`] !== "" &&
-      props[`${INGREDIENT}${num}`] !== null
+      meal[`${INGREDIENT}${num}`] !== "" &&
+      meal[`${INGREDIENT}${num}`] !== null
     ) {
       filteredIngredient.push(
-        props[`${MEASURE}${num}`] + " " + props[`${INGREDIENT}${num}`]
+        meal[`${MEASURE}${num}`] + " " + meal[`${INGREDIENT}${num}`]
       );
     }
   });
@@ -55,7 +63,7 @@ const MealDescription = (props) => {
         </div>
         <BlogHeader
           imageSrc={imageSrc}
-          idMeal={props.idMeal}
+          idMeal={meal.idMeal}
           title={mealTitle}
         />
         <main className={`${classes.container}`}>
