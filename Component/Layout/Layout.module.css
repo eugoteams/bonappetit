@@ -2,14 +2,20 @@
 
 .container {
   width: 95rem;
-  min-height: 100vh;
+  height: 100%;
   margin: 6rem auto;
 }
 
 /*Layout breaks 58em */
 @media (max-width: 58em) {
   .container {
-    width: 100vw;
-    margin-left: 1rem;
+    width: 95%;
+  }
+}
+
+/* Mobile Medium */
+@media (max-width: 24em) {
+  .container {
+    width: 100%;
   }
 }
