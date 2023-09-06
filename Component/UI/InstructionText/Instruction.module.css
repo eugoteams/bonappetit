@@ -29,7 +29,7 @@
 @media (max-width: 43em) {
   .num {
     font-size: 1.7rem;
-    top: 0;
+    top: -0.3rem;
   }
   .para {
     font-size: 1.2rem;
