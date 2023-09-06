@@ -8,6 +8,7 @@
   justify-content: space-between;
   padding: 1.5rem;
   border-bottom: 1px solid gray;
+  position: relative;
 }
 
 .avatar {
@@ -71,4 +72,24 @@
   color: #f8f9fa;
   padding: 1rem;
   border-radius: 5px;
+}
+
+/*Mobile Large 27em => 32em*/
+@media (max-width: 32em) {
+  .avatar_info span:first-child {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  .button {
+    background: inherit;
+  }
+
+  .button > span {
+    display: none;
+  }
+
+  .icon_white {
+    color: black;
+  }
 }

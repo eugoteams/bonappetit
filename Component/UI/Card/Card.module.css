@@ -91,4 +91,8 @@
   .cardTitle {
     font-size: 1.3rem;
   }
+  .cardTags {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
 }

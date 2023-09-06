@@ -5,6 +5,7 @@
   align-items: flex-start;
   gap: 2rem;
   position: relative;
+  margin: 1.5rem auto;
 }
 
 .num {
@@ -12,9 +13,9 @@
   font-size: 2rem;
   font-weight: 600;
   position: absolute;
-  top: auto;
-  left: auto;
-  padding-top: 1.01rem;
+  top: -0.4rem;
+  left: 1rem;
+  /* padding-top: 1.01rem; */
 }
 
 .para {
@@ -22,4 +23,18 @@
   font-weight: 300;
   line-height: 1.7;
   margin-left: 4rem;
+}
+
+/*Container breaks at 43em before Large Mobile Screen */
+@media (max-width: 43em) {
+  .num {
+    font-size: 1.7rem;
+    top: 0;
+  }
+  .para {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-left: 4rem;
+  }
 }
