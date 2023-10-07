@@ -59,7 +59,6 @@ const BookmarkComponent = (props) => {
         getMealsFromIDs(mealsArray, bookmarkArray)
       );
     } else {
-      console.log("entere herer");
       setInfo((prevState) => {
         return { ...prevState, mag: "database missing in storage.." };
       });

@@ -85,7 +85,7 @@ const MainPageComponent = (props) => {
         uiFilterText={unKownUIFilterText}
       />
       <DividerInfo title={filterText} quantity={meals.length} />
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader text={"Loading Recipes..."} />}>
         {meals.length === 0 ? (
           <Info text={info.msg} stopwatch={info.stopwatch} />
         ) : (
