@@ -1,10 +1,10 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import classes from "./SortDropDown.module.css";
 import { TiArrowUnsorted } from "react-icons/ti";
 
-const SortDropDown = ({ selectListener, arrayOfItems, defaultValue }) => {
+const SortDropDown = memo(({ selectListener, arrayOfItems, defaultValue }) => {
   const [selected, setSelected] = useState("");
   const [dropDown, setDropDown] = useState(false);
 
@@ -62,6 +62,6 @@ const SortDropDown = ({ selectListener, arrayOfItems, defaultValue }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default SortDropDown;

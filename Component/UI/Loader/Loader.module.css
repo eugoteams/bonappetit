@@ -1,20 +1,21 @@
 /** @format */
 
 .container {
+  /* background-color: #adb5bd;*/
+  z-index: 22;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  display: block;
+  position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  right: 50%;
+  transform: translate(50%, 50%);
 }
 
 .bar {
   width: 25rem;
-  height: 1rem;
+  height: 1.5rem;
   background-color: #adb5bd;
   border-radius: 5px;
   overflow: hidden;
@@ -23,12 +24,19 @@
 .active_bar {
   width: 0%;
   height: 100%;
-  background-color: #5c7cfa;
-
+  background-color: #fa5252;
   animation-name: load_anim;
-  animation-duration: 56s;
+  animation-duration: 1.8s;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   animation-iteration-count: infinite;
+}
+
+.container p {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Leckerli One", cursive;
+  color: #fa5252;
+  margin: 2rem auto;
 }
 
 @keyframes load_anim {

@@ -1,9 +1,9 @@
 /** @format */
 
-import React from "react";
+import React, { memo } from "react";
 import classes from "./Instruction.module.css";
 
-const InstructionText = ({ num, text }) => {
+const InstructionText = memo(({ num, text }) => {
   return (
     <React.Fragment>
       <div className={`${classes.container}`}>
@@ -12,6 +12,6 @@ const InstructionText = ({ num, text }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default InstructionText;

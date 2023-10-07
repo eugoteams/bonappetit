@@ -1,9 +1,9 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import classes from "./Info.module.css";
 
-const Info = ({ text, stopwatch }) => {
+const Info = memo(({ text, stopwatch }) => {
   const [timer, setTimer] = useState(0);
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -22,6 +22,6 @@ const Info = ({ text, stopwatch }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default Info;

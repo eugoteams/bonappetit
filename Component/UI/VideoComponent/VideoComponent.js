@@ -1,9 +1,9 @@
 /** @format */
 
-import React from "react";
+import React, { memo } from "react";
 import classes from "./VideoComponent.module.css";
 
-const VideoComponent = ({ videoSrc }) => {
+const VideoComponent = memo(({ videoSrc }) => {
   let videoId = videoSrc.split("v=")[1];
   let embedUrl = `https://www.youtube.com/embed/${videoId}`;
   return (
@@ -13,6 +13,6 @@ const VideoComponent = ({ videoSrc }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default VideoComponent;

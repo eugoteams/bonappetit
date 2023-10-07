@@ -1,5 +1,5 @@
 /** @format */
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import MainPageComponent from "@/Component/MainPageComponent";
 
 export default function Home() {

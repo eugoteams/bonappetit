@@ -1,9 +1,9 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import classes from "./TextStrike.module.css";
 
-const TextStrike = ({ text, lastElement }) => {
+const TextStrike = memo(({ text, lastElement }) => {
   const [radio, setRadio] = useState(false);
   const onClickListener = (event) => {
     setRadio((prevState) => !prevState);
@@ -34,6 +34,6 @@ const TextStrike = ({ text, lastElement }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default TextStrike;

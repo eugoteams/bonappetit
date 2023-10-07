@@ -1,12 +1,12 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import classes from "./Card.module.css";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import Link from "next/link";
 import useStorage, { BOOKMARK_KEY } from "@/hooks/use-Storage";
 
-const Card = ({ title, imageSrc, idMeal, origin, category }) => {
+const Card = memo(({ title, imageSrc, idMeal, origin, category }) => {
   const [bookmark, setBookMark] = useState(false);
   const { saveToStorage, getFromStorage } = useStorage();
   //https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg
@@ -46,6 +46,6 @@ const Card = ({ title, imageSrc, idMeal, origin, category }) => {
       </Link>
     </React.Fragment>
   );
-};
+});
 
 export default Card;

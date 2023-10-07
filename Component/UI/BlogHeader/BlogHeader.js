@@ -1,12 +1,12 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import classes from "./BlogHeader.module.css";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { AiFillPrinter } from "react-icons/ai";
 import useStorage, { BOOKMARK_KEY } from "@/hooks/use-Storage";
 
-const BlogHeader = ({ imageSrc, idMeal, title }) => {
+const BlogHeader = memo(({ imageSrc, idMeal, title }) => {
   const [bookmark, setBookMark] = useState(false);
   const [idBookMarked, setIdBookMarked] = useState(false);
   const { getFromStorage, saveToStorage } = useStorage();
@@ -81,6 +81,6 @@ const BlogHeader = ({ imageSrc, idMeal, title }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default BlogHeader;

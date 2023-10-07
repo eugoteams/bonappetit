@@ -1,10 +1,10 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import classes from "./Search.module.css";
 import { MdSearch, MdClose } from "react-icons/md";
 
-const Search = ({ textChangeListener }) => {
+const Search = memo(({ textChangeListener }) => {
   const [searchText, setSearchText] = useState("");
 
   const onTextChange = (e) => {
@@ -43,6 +43,6 @@ const Search = ({ textChangeListener }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default Search;

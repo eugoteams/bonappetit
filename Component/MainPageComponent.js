@@ -1,13 +1,20 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import useStorage, { BOOKMARK_KEY, MEALS_KEY } from "@/hooks/use-Storage";
-import MealsView from "./MealsView/MealsView";
+const MealsView = lazy(() => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(import("./MealsView/MealsView"));
+    }, 2000);
+  });
+});
 import useServerMessage from "@/hooks/use-ServerMsg";
 import useApi from "@/hooks/use-Api";
 import UnkownUI from "./UnkownUI/UnkownUI";
 import DividerInfo from "./UI/DividerInfo/DividerInfo";
 import Info from "./UI/Info/Info";
+import Loader from "./UI/Loader/Loader";
 
 const MainPageComponent = (props) => {
   const [serverStatus, setServerStatus] = useState("");
@@ -32,8 +39,8 @@ const MainPageComponent = (props) => {
   useEffect(() => {
     setInfo((prevState) => {
       return {
-        msg: "crawling web please don't refresh or click other links...",
-        stopwatch: true,
+        msg: "Sorry, we couldn't find any recipes !",
+        stopwatch: false,
       };
     });
     //Local storage to work dom must be initialized
@@ -51,35 +58,40 @@ const MainPageComponent = (props) => {
     }
   }, []);
 
-  useEffect(() => {}, [meals]);
+  // useEffect(() => {}, [meals]);
+
+  const unKownUIListener = useCallback((uiData) => {
+    if (uiData.length === 0 && meals.length > 0) {
+      setInfo((prevState) => {
+        return { msg: "Recipe not found !", stopwatch: false };
+      });
+    }
+    setMealsList((prevState) => uiData);
+  }, []);
+
+  const unKownUIFilterText = useCallback((filterValue) => {
+    setFilterText((prevState) =>
+      filterValue === "all"
+        ? "all"
+        : filterValue.join("_").split("_").join(" / ")
+    );
+  }, []);
 
   return (
     <React.Fragment>
       <UnkownUI
         storageKey={MEALS_KEY}
-        uiListener={(uiData) => {
-          if (uiData.length === 0 && meals.length > 0) {
-            setInfo((prevState) => {
-              return { msg: "Recipe not found !", stopwatch: false };
-            });
-          }
-          setMealsList((prevState) => uiData);
-        }}
-        uiFilterText={(filterValue) => {
-          setFilterText((prevState) =>
-            filterValue === "all"
-              ? "all"
-              : filterValue.join("_").split("_").join(" / ")
-          );
-        }}
+        uiListener={unKownUIListener}
+        uiFilterText={unKownUIFilterText}
       />
       <DividerInfo title={filterText} quantity={meals.length} />
-
-      {meals.length === 0 ? (
-        <Info text={info.msg} stopwatch={info.stopwatch} />
-      ) : (
-        <MealsView arrayOfMeals={meals} title={"all"} />
-      )}
+      <Suspense fallback={<Loader />}>
+        {meals.length === 0 ? (
+          <Info text={info.msg} stopwatch={info.stopwatch} />
+        ) : (
+          <MealsView arrayOfMeals={meals} title={"all"} />
+        )}
+      </Suspense>
     </React.Fragment>
   );
 };

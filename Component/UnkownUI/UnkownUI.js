@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, memo } from "react";
 import classes from "./UnkownUI.module.css";
 import SortDropDown from "../UI/SortDropDown/SortDropDown";
 import Search from "../UI/Search/Search";
@@ -8,7 +8,7 @@ import { countries, category } from "@/model/DropDownData";
 import useStorage from "@/hooks/use-Storage";
 import useHelper from "@/hooks/use-Helper";
 
-const UnkownUI = ({ uiListener, uiFilterText, storageKey }) => {
+const UnkownUI = memo(({ uiListener, uiFilterText, storageKey }) => {
   const { getFromStorage } = useStorage();
   const { filterMeals } = useHelper();
   const [filter, setFilter] = useState({
@@ -16,23 +16,23 @@ const UnkownUI = ({ uiListener, uiFilterText, storageKey }) => {
     strCategory: "",
     strSearch: "",
   });
-  const onDropDownListenerCategories = (selectedText) => {
+  const onDropDownListenerCategories = useCallback((selectedText) => {
     setFilter((prevState) => {
       return { ...prevState, strCategory: selectedText };
     });
-  };
+  }, []);
 
-  const onDropDownListenerCountries = (selectedText) => {
+  const onDropDownListenerCountries = useCallback((selectedText) => {
     setFilter((prevState) => {
       return { ...prevState, strArea: selectedText };
     });
-  };
+  }, []);
 
-  const onTextSearchListener = (typedText) => {
+  const onTextSearchListener = useCallback((typedText) => {
     setFilter((prevState) => {
       return { ...prevState, strSearch: typedText };
     });
-  };
+  }, []);
 
   const dataBasedOnFilter = () => {
     let storedData = getFromStorage(storageKey);
@@ -98,6 +98,6 @@ const UnkownUI = ({ uiListener, uiFilterText, storageKey }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default UnkownUI;
